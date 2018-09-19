@@ -37,9 +37,9 @@ cd ~
 
 echo "\n" >> .bashrc
 echo "#Some helpful aliases" >> .bashrc
-echo "alias start-logstash=/etc/logstash/bin/logstash" >> .bashrc
-echo "alias start-kibana=/etc/kibana/bin/kibana" >> .bashrc
-echo "alias start-elasticsearch=/etc/elasticsearch/bin/elasticsearch" >> .bashrc
+echo "alias logstash=/etc/logstash/bin/logstash" >> .bashrc
+echo "alias kibana=/etc/kibana/bin/kibana" >> .bashrc
+echo "alias elasticsearch=/etc/elasticsearch/bin/elasticsearch" >> .bashrc
 
 source .bashrc
 
