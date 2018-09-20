@@ -8,6 +8,7 @@ sudo rm -rf logstash/
 sudo wget https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-6.4.0.tar.gz
 sudo tar -zxvf elasticsearch-6.4.0.tar.gz
 sudo rm -rf elasticsearch-6.4.0.tar.gz
+sudo unlink elasticsearch
 sudo ln -s elasticsearch-6.4.0/ elasticsearch
 sudo chown -R hduser:hadoopgroup elasticsearch
 sudo chown -R hduser:hadoopgroup elasticsearch-6.4.0/
@@ -16,6 +17,7 @@ sudo chown -R hduser:hadoopgroup elasticsearch-6.4.0/
 sudo wget https://artifacts.elastic.co/downloads/kibana/kibana-6.4.0-linux-x86_64.tar.gz
 sudo tar -zxvf kibana-6.4.0-linux-x86_64.tar.gz
 sudo rm -rf kibana-6.4.0-linux-x86_64.tar.gz
+sudo unlink kibana
 sudo ln -s kibana-6.4.0-linux-x86_64/ kibana
 sudo chown -R hduser:hadoopgroup kibana
 sudo chown -R hduser:hadoopgroup kibana-6.4.0-linux-x86_64/
@@ -28,6 +30,7 @@ sed -i 's/#elasticsearch\.url/elasticsearch\.url/g' /etc/kibana/config/kibana.ym
 sudo wget https://artifacts.elastic.co/downloads/logstash/logstash-6.4.0.zip
 sudo unzip logstash-6.4.0.zip
 sudo rm -rf logstash-6.4.0.zip
+sudo unlink logstash
 sudo ln -s logstash-6.4.0/ logstash
 sudo chown -R hduser:hadoopgroup logstash
 sudo chown -R hduser:hadoopgroup logstash-6.4.0/
@@ -35,7 +38,7 @@ sudo chown -R hduser:hadoopgroup logstash-6.4.0/
 # Volta para o diretório corrente
 cd ~
 
-echo "\n" >> .bashrc
+echo "" >> .bashrc
 echo "#Some helpful aliases" >> .bashrc
 echo "alias logstash=/etc/logstash/bin/logstash" >> .bashrc
 echo "alias kibana=/etc/kibana/bin/kibana" >> .bashrc
